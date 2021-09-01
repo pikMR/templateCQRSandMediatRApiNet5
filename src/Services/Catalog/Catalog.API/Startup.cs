@@ -40,7 +40,7 @@ namespace Catalog.API
 
             services.AddDbContext<CatalogContext>(options =>
             {
-	            options.UseSqlServer(Configuration["ConnectionString:ServimotosDbConnection"]);
+	            options.UseSqlServer(Configuration["ConnectionStrings:ServimotosDbConnection"]);
             });
 
             services.AddScoped<ISaveProductCommandHandler,SaveProductCommandHandler>();
