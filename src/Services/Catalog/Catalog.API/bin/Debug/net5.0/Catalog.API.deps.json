@@ -37,6 +37,8 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.9",
+          "Microsoft.Extensions.Configuration": "5.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -121,7 +123,7 @@
           "Microsoft.Extensions.Configuration.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0.0",
-          "Microsoft.Extensions.Configuration": "5.0.0.0",
+          "Microsoft.Extensions.Configuration.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "5.0.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Ini": "5.0.0.0",
@@ -510,6 +512,12 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
           "Microsoft.Extensions.Options": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0"
         }
       },
@@ -1872,7 +1880,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration/5.0.0.0": {
+      "Microsoft.Extensions.Configuration.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.dll": {}
         },
@@ -3166,6 +3174,13 @@
       "path": "microsoft.extensions.caching.memory/5.0.0",
       "hashPath": "microsoft.extensions.caching.memory.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LN322qEKHjuVEhhXueTUe7RNePooZmS8aGid5aK2woX3NPjSnONFyKUc6+JknOS6ce6h2tCLfKPTBXE3mN/6Ag==",
+      "path": "microsoft.extensions.configuration/5.0.0",
+      "hashPath": "microsoft.extensions.configuration.5.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration.Abstractions/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4204,7 +4219,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration/5.0.0.0": {
+    "Microsoft.Extensions.Configuration.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

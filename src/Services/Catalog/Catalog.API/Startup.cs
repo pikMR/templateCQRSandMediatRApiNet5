@@ -23,7 +23,9 @@ namespace Catalog.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
+            
+            // .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            // .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true)
         }
 
         public IConfiguration Configuration { get; }
@@ -31,7 +33,6 @@ namespace Catalog.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -40,7 +41,7 @@ namespace Catalog.API
 
             services.AddDbContext<CatalogContext>(options =>
             {
-	            options.UseSqlServer(Configuration["ConnectionStrings:ServimotosDbConnection"]);
+                options.UseSqlServer(Configuration["ConnectionStrings:ServimotosDbConnection"]);
             });
 
             services.AddScoped<ISaveProductCommandHandler,SaveProductCommandHandler>();
@@ -66,6 +67,7 @@ namespace Catalog.API
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }
