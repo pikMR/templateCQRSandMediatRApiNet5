@@ -1,8 +1,7 @@
-namespace Catalog.API.Model
+namespace Catalog.API.RequestModels.CommandRequestModels
 {
-    public class Products
+    public class SaveProductRequestModel
     {
-        public int ProductId { get; set; }
         public string Name { get; set; }
         public string Manufacturer { get; set; }
         public string Description { get; set; }

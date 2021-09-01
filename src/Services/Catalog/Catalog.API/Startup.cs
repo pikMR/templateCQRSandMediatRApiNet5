@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catalog.API.Contracts.CommandHandlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,16 +12,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-
 namespace Catalog.API
 {
     using Catalog.API.Infrastructure;
     using Microsoft.EntityFrameworkCore;
+    using Catalog.API.Handlers.CommandHandlers;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -37,8 +40,10 @@ namespace Catalog.API
 
             services.AddDbContext<CatalogContext>(options =>
             {
-	            options.UseSqlServer(Configuration.GetConnectionString("ServimotosDbConnection"));
+	            options.UseSqlServer(Configuration["ConnectionString:ServimotosDbConnection"]);
             });
+
+            services.AddScoped<ISaveProductCommandHandler,SaveProductCommandHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
